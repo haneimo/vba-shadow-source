@@ -1,19 +1,23 @@
 vba-shadow-source
 =================
 
-.xlsm�t�@�C����Excel�ō쐬����B
-�Z�L�����e�B�Z���^�[���J���A�uVBA �v���W�F�N�g �I�u�W�F�N�g ���f���ւ̃A�N�Z�X��M������(V)�v���`�F�b�N����B
-Alt+F11��VBE���J���B
-���W�F�N�g��VBASHADOWSOURCE.bas���C���|�[�g����B
-VBASHADOWSOURCE ���W���[����VBE�ŊJ���B
-initVBASHADOWSOURCE �T�u���[�`����I������F5�L�[���������Ď��s����B
+日本語ですみません。あとで書き直します;;
 
 
-xlsm���J�����Ƃ��ɁA"�t�@�C����_�g���q_src"�t�H���_����\�[�X�R�[�h���C���|�[�g����B
-xlsm��ۑ������Ƃ��ɁA"�t�@�C����_�g���q_src"�t�H���_�փ\�[�X�R�[�h���G�N�X�|�[�g����B
+####導入に際して
+1. .xlsmファイルをExcelで作成する。
+2. セキュリティセンターを開き、「VBA プロジェクト オブジェクト モデルへのアクセスを信頼する(V)」をチェックする。
+3. Alt+F11でVBEを開く。
+4. プロジェクトにVBASHADOWSOURCE.basをインポートする。
+5. VBASHADOWSOURCE モジュールをVBEで開く。
+6. initVBASHADOWSOURCE サブルーチンを選択してF5キーを押下して実行する。
 
+####導入すると
+* xlsmを開いたときに、"ファイル名_拡張子_src"フォルダからソースコードをインポートする。
+* xlsmを保存したときに、"ファイル名_拡張子_src"フォルダへソースコードをエクスポートする。
 
-subersion��git�ŃR���t���N�g�������������xlsm���J���ƁA
-�����ς݃R�[�h�ŃR�[�f�B���O�ł���B
-xlsm���J���Ă��鎞�́AVBE�̃R�[�h�����ƂȂ�B
-xlsm����Ă��鎞��"�t�@�C����_�g���q_src"�z���̃R�[�h�����ƂȂ�B
+####なんで作った？
+subersionやgitでVBAを管理したかったので作った。
+コンフリクトを解決した後にxlsmを開くと、解決済みコードでコーディングできる。
+xlsmを開いている時は、VBEのコードが正となる。
+xlsmを閉じている時は"ファイル名_拡張子_src"配下のコードが正となる。
